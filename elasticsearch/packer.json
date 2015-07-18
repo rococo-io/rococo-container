@@ -16,9 +16,16 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "rococo.io:5000/rc/elasticsearch",
+      "repository": "rc/elasticsearch",
       "force": true
     },
-    "docker-push"
+    [
+      {
+        "type": "docker-tag",
+        "repository": "rococo.io:5000/rc/elasticsearch",
+        "force": true
+      },
+      "docker-push"
+    ]
   ]
 }

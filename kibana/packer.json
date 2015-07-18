@@ -16,9 +16,16 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "rococo.io:5000/rc/kibana",
+      "repository": "rc/kibana",
       "force": true
     },
-    "docker-push"
+    [
+      {
+        "type": "docker-tag",
+        "repository": "rococo.io:5000/rc/kibana",
+        "force": true
+      },
+      "docker-push"
+    ]
   ]
 }

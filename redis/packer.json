@@ -16,9 +16,16 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "rococo.io:5000/rc/redis",
+      "repository": "rc/redis",
       "force": true
     },
-    "docker-push"
+    [
+      {
+        "type": "docker-tag",
+        "repository": "rococo.io:5000/rc/redis",
+        "force": true
+      },
+      "docker-push"
+    ]
   ]
 }

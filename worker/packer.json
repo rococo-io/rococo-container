@@ -16,9 +16,16 @@
   "post-processors": [
     {
       "type": "docker-tag",
-      "repository": "rococo.io:5000/rc/worker",
+      "repository": "rc/worker",
       "force": true
     },
-    "docker-push"
+    [
+      {
+        "type": "docker-tag",
+        "repository": "rococo.io:5000/rc/worker",
+        "force": true
+      },
+      "docker-push"
+    ]
   ]
 }
