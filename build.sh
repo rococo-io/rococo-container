@@ -1,24 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-cd base
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+cd $DIR/base
 packer build packer.json
-cd ../base-java
+
+cd $DIR/base-java
 packer build packer.json
-cd ../nginx
+
+cd $DIR/elasticsearch
 packer build packer.json
-cd ../redis
+
+cd $DIR/kibana
 packer build packer.json
-cd ../phpfpm
+
+cd $DIR/logstash
 packer build packer.json
-cd ../elasticsearch
+
+cd $DIR/mailhog
 packer build packer.json
-cd ../logstash
+
+cd $DIR/nginx
 packer build packer.json
-cd ../postgres
+
+cd $DIR/phpfpm
 packer build packer.json
-cd ../worker
+
+cd $DIR/postgres
 packer build packer.json
-cd ../kibana
+
+cd $DIR/redis
 packer build packer.json
-cd ../mailhog
+
+cd $DIR/worker
 packer build packer.json
