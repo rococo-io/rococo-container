@@ -14,13 +14,10 @@
   ],
   "post-processors": [
     {
-      "type": "docker-save",
-      "path": "../../build/image/base.tar"
-    },
-    {
       "type": "docker-tag",
-      "repository": "rc/base",
+      "repository": "rococo.io:5000/rc/base",
       "force": true
-    }
+    },
+    "docker-push"
   ]
 }

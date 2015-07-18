@@ -15,13 +15,10 @@
   ],
   "post-processors": [
     {
-      "type": "docker-save",
-      "path": "../../build/image/phpfpm.tar"
-    },
-    {
       "type": "docker-tag",
-      "repository": "rc/phpfpm",
+      "repository": "rococo.io:5000/rc/phpfpm",
       "force": true
-    }
+    },
+    "docker-push"
   ]
 }

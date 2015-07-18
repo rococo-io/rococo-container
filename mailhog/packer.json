@@ -15,13 +15,10 @@
   ],
   "post-processors": [
     {
-      "type": "docker-save",
-      "path": "../../build/image/mailhog.tar"
-    },
-    {
       "type": "docker-tag",
-      "repository": "rc/mailhog",
+      "repository": "rococo.io:5000/rc/mailhog",
       "force": true
-    }
+    },
+    "docker-push"
   ]
 }
